@@ -1,0 +1,14 @@
+{
+  "target": "192.168.86.54",
+  "clients": 32,
+  "warmup_seconds": 30,
+  "seconds": 600,
+  "mode": "Benchmark",
+  "difficulties": [
+    4,
+    5,
+    6,
+    7,
+    8
+  ]
+}

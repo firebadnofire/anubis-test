@@ -1,0 +1,7 @@
+difficulty=4 elapsed=10s accepted=39576 active=0 GPU=687.20 MH/s
+difficulty=4 elapsed=20s accepted=80238 active=0 GPU=694.89 MH/s
+difficulty=4 elapsed=30s accepted=120769 active=3 GPU=694.64 MH/s
+difficulty=4 elapsed=40s accepted=162209 active=1 GPU=704.57 MH/s
+difficulty=4 elapsed=50s accepted=203535 active=1 GPU=711.67 MH/s
+difficulty=4 elapsed=60s accepted=244347 active=1 GPU=717.26 MH/s
+Stage complete: accepted=285283 unfinished=30 wall=422.65 MH/s reports=C:\Users\william\Desktop\git\tmp\reports\20260930T021458Z-ffa83aa1\difficulty-4

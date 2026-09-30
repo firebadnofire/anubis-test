@@ -1,0 +1,10 @@
+{
+  "difficulties": [
+    4
+  ],
+  "clients": 32,
+  "target": "192.168.86.54",
+  "mode": "Benchmark",
+  "seconds": 15,
+  "warmup_seconds": 2
+}

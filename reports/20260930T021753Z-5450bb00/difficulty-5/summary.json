@@ -1,0 +1,22 @@
+{
+  "difficulty": 5,
+  "concurrency": 32,
+  "started": "2026-09-30T02:28:47.8264657Z",
+  "elapsed_seconds": 600.0015808,
+  "hashes": 1158978928640,
+  "gpu_batch_seconds": 592.2698090996789,
+  "gpu_hashes_per_second": 1956842828.7806647,
+  "wall_hashes_per_second": 1931626458.5414903,
+  "accepted": 1071288,
+  "rejected": 0,
+  "timeouts": 0,
+  "failures": 0,
+  "unfinished": 32,
+  "accepted_per_second": 1785.4752958677536,
+  "solve_p50_ms": 9.5328,
+  "solve_p95_ms": 41.0919,
+  "solve_p99_ms": 64.1905,
+  "total_p50_ms": 13.5005,
+  "total_p95_ms": 44.6912,
+  "total_p99_ms": 67.6586
+}

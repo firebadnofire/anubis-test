@@ -1,0 +1,7 @@
+Exception: C:\Users\william\Desktop\git\tmp\scripts\run.ps1:53
+Line |
+  53 |  … de -ne 0) { throw "Difficulty $difficulty failed: $(Get-Content "$sta …
+     |                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Difficulty 4 failed: Benchmark stopped: challenge HTTP 502 
+
+

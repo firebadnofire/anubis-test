@@ -1,0 +1,32 @@
+backend-1  | /docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
+backend-1  | /docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
+backend-1  | /docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
+nginx-1    | /docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
+nginx-1    | /docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
+nginx-1    | /docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
+nginx-1    | 10-listen-on-ipv6-by-default.sh: info: Getting the checksum of /etc/nginx/conf.d/default.conf
+nginx-1    | 10-listen-on-ipv6-by-default.sh: info: Enabled listen on IPv6 in /etc/nginx/conf.d/default.conf
+nginx-1    | /docker-entrypoint.sh: Sourcing /docker-entrypoint.d/15-local-resolvers.envsh
+nginx-1    | /docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+nginx-1    | /docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
+nginx-1    | /docker-entrypoint.sh: Configuration complete; ready for start up
+nginx-1    | 2026-09-30T03:13:36+00:00 GET / 200 0.010 0.011
+nginx-1    | 2026-09-30T03:13:36+00:00 GET /.within.website/x/cmd/anubis/api/pass-challenge 302 0.001 0.001
+nginx-1    | 2026-09-30T03:13:36+00:00 GET / 200 0.001 0.002
+nginx-1    | 2026-09-30T03:13:36+00:00 GET /.within.website/x/cmd/anubis/api/pass-challenge 500 0.001 0.001
+nginx-1    | 2026-09-30T03:13:36+00:00 GET / 200 0.001 0.000
+nginx-1    | 2026-09-30T03:13:36+00:00 GET /.within.website/x/cmd/anubis/api/pass-challenge 403 0.001 0.001
+backend-1  | 10-listen-on-ipv6-by-default.sh: info: Getting the checksum of /etc/nginx/conf.d/default.conf
+backend-1  | 10-listen-on-ipv6-by-default.sh: info: Enabled listen on IPv6 in /etc/nginx/conf.d/default.conf
+backend-1  | /docker-entrypoint.sh: Sourcing /docker-entrypoint.d/15-local-resolvers.envsh
+backend-1  | /docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+backend-1  | /docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
+backend-1  | /docker-entrypoint.sh: Configuration complete; ready for start up
+anubis-1   | {"time":"2026-09-30T03:13:33.013544885Z","level":"INFO","source":{"function":"main.run","file":"github.com/TecharoHQ/anubis/cmd/anubis/main.go","line":269},"msg":"starting up Anubis"}
+anubis-1   | {"time":"2026-09-30T03:13:33.013628873Z","level":"INFO","source":{"function":"main.run","file":"github.com/TecharoHQ/anubis/cmd/anubis/main.go","line":303},"msg":"loading policy file","fname":"/config/policy.yaml"}
+anubis-1   | {"time":"2026-09-30T03:13:33.016381937Z","level":"WARN","source":{"function":"main.run","file":"github.com/TecharoHQ/anubis/cmd/anubis/main.go","line":398},"msg":"generating random key, Anubis will have strange behavior when multiple instances are behind the same load balancer target, for more information: see https://anubis.techaro.lol/docs/admin/installation#key-generation"}
+anubis-1   | {"time":"2026-09-30T03:13:33.01647953Z","level":"INFO","source":{"function":"main.run","file":"github.com/TecharoHQ/anubis/cmd/anubis/main.go","line":476},"msg":"listening","url":"http://localhost:8080","difficulty":4,"serveRobotsTXT":false,"target":"unix:///run/bench/backend.sock","version":"v1.27.0","use-remote-address":false,"debug-benchmark-js":false,"og-passthrough":false,"og-expiry-time":86400000000000,"base-prefix":"","cookie-expiration-time":604800000000000,"rule-error-ids":{},"public-url":""}
+anubis-1   | {"time":"2026-09-30T03:13:36.466394379Z","level":"INFO","source":{"function":"github.com/TecharoHQ/anubis/lib.(*Server).issueChallenge","file":"github.com/TecharoHQ/anubis/lib/anubis.go","line":191},"msg":"new challenge issued","subsystem":"anubis","host":"127.0.0.1:18080","method":"GET","path":"/","user_agent":"Mozilla/5.0 Anubis4090LocalBenchmark/1.0","accept_language":"","priority":"","x-forwarded-for":"","x-real-ip":"192.168.144.1","challenge":"01a0f04d-a8d2-754d-a064-7a6284851ddb","weight":0}
+anubis-1   | {"time":"2026-09-30T03:13:36.474877089Z","level":"ERROR","source":{"function":"github.com/TecharoHQ/anubis/lib.(*Server).PassChallenge","file":"github.com/TecharoHQ/anubis/lib/anubis.go","line":568},"msg":"double spend prevented","subsystem":"anubis","host":"127.0.0.1:18080","method":"GET","path":"/.within.website/x/cmd/anubis/api/pass-challenge","user_agent":"Mozilla/5.0 Anubis4090LocalBenchmark/1.0","accept_language":"","priority":"","x-forwarded-for":"","x-real-ip":"192.168.144.1","check_result":{"name":"bot/benchmark-all-clients","rule":"CHALLENGE","weight":0},"reason":"double_spend"}
+anubis-1   | {"time":"2026-09-30T03:13:36.475905055Z","level":"INFO","source":{"function":"github.com/TecharoHQ/anubis/lib.(*Server).issueChallenge","file":"github.com/TecharoHQ/anubis/lib/anubis.go","line":191},"msg":"new challenge issued","subsystem":"anubis","host":"127.0.0.1:18080","method":"GET","path":"/","user_agent":"Mozilla/5.0 Anubis4090LocalBenchmark/1.0","accept_language":"","priority":"","x-forwarded-for":"","x-real-ip":"192.168.144.1","challenge":"01a0f04d-a8db-7d51-b598-b9c26064717f","weight":0}
+anubis-1   | {"time":"2026-09-30T03:13:36.477512371Z","level":"ERROR","source":{"function":"github.com/TecharoHQ/anubis/lib.(*Server).PassChallenge","file":"github.com/TecharoHQ/anubis/lib/anubis.go","line":601},"msg":"challenge failed","subsystem":"anubis","host":"127.0.0.1:18080","method":"GET","path":"/.within.website/x/cmd/anubis/api/pass-challenge","user_agent":"Mozilla/5.0 Anubis4090LocalBenchmark/1.0","accept_language":"","priority":"","x-forwarded-for":"","x-real-ip":"192.168.144.1","check_result":{"name":"bot/benchmark-all-clients","rule":"CHALLENGE","weight":0},"challenge":"01a0f04d-a8db-7d51-b598-b9c26064717f","err":"challenge: error when processing challenge: validate: challenge: user failed challenge: wanted response 1151d3af1f0f2912d345b5ecf60b39e652a456e13e680348902fabe713cc3c67 but got 0000000000000000000000000000000000000000000000000000000000000000"}

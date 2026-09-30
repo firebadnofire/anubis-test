@@ -1,0 +1,7 @@
+Exception: C:\Users\william\Desktop\git\tmp\scripts\run.ps1:31
+Line |
+  31 |      if ($LASTEXITCODE -ne 0) { throw 'GPU warmup failed.' }
+     |                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | GPU warmup failed.
+
+
