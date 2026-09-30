@@ -1,5 +1,7 @@
 # Anubis RTX 4090 benchmark
 
+[Benchmark findings](reports/findings.md)
+
 Native Windows CUDA solver against an isolated `nginx → Anubis → backend` Docker stack on `192.168.86.54`. The default sweep runs 32 independent sessions at each `fast` difficulty 4–8 for 600 seconds, after 30 seconds of GPU warmup. Every completed session requires a fresh challenge, a CPU-verified GPU proof, an authentication cookie, and the backend's exact success response.
 
 ## Build
