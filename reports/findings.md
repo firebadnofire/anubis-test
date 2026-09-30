@@ -1,6 +1,6 @@
 # Findings: RTX 4090 against Anubis v1.27.0 `fast` proof-of-work
 
-**Repository:** https://github.com/firebadnofire/aunbis-test  
+**Repository:** https://github.com/firebadnofire/anubis-test  
 **Primary sustained run:** `20260930T021753Z-5450bb00`
 
 ## Executive summary
