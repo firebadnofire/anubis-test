@@ -1,0 +1,10 @@
+bots:
+  - name: benchmark-all-clients
+    path_regex: .*
+    action: CHALLENGE
+    challenge:
+      algorithm: fast
+      difficulty: 4
+dnsbl: false
+honeypot:
+  enabled: false

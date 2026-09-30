@@ -1,0 +1,49 @@
+name: anubis-4090-bench
+services:
+  nginx:
+    image: nginx:1.28.0-alpine@sha256:30f1c0d78e0ad60901648be663a710bdadf19e4c10ac6782c235200619158284
+    ports: ["127.0.0.1:18080:8080"]
+    volumes: ["./nginx.conf:/etc/nginx/nginx.conf:ro,Z"]
+    depends_on:
+      anubis:
+        condition: service_healthy
+    mem_limit: 128m
+    cpus: 1
+    networks: [ingress, benchmark]
+  anubis:
+    image: ghcr.io/techarohq/anubis:v1.27.0@sha256:8828275668b7bc675679f100970f9714f731388fbbf66ae94de8aca952e3fc4a
+    environment:
+      BIND: ":8080"
+      METRICS_BIND: ":9090"
+      TARGET: "unix:///run/bench/backend.sock"
+      POLICY_FNAME: "/config/policy.yaml"
+      COOKIE_SECURE: "false"
+      COOKIE_HTTP_ONLY: "true"
+      COOKIE_SAME_SITE: "Lax"
+      REDIRECT_DOMAINS: "127.0.0.1"
+      OG_PASSTHROUGH: "false"
+      SLOG_LEVEL: "INFO"
+      GOMEMLIMIT: "3GiB"
+    volumes: ["./policy.yaml:/config/policy.yaml:ro,Z", "backend-socket:/run/bench:ro"]
+    healthcheck:
+      test: ["CMD", "anubis", "--healthcheck"]
+      interval: 2s
+      timeout: 3s
+      retries: 15
+    depends_on: [backend]
+    mem_limit: 4g
+    cpus: 2
+    networks: [benchmark]
+  backend:
+    image: nginx:1.28.0-alpine@sha256:30f1c0d78e0ad60901648be663a710bdadf19e4c10ac6782c235200619158284
+    volumes: ["./backend.conf:/etc/nginx/nginx.conf:ro,Z", "backend-socket:/run/bench"]
+    mem_limit: 64m
+    cpus: 0.5
+    networks: [benchmark]
+networks:
+  ingress: {}
+  benchmark:
+    internal: true
+volumes:
+  backend-socket: {}
+
